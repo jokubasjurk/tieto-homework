@@ -14,4 +14,5 @@ _Available seasons: **WINTER**, **SUMMER**, **AUTUMN**, **SPRING**_
 ```
 mvn spring-boot:run
 ```
+_P.S. To save some time, barebones spring boot project was cloned from [bezkoder](https://github.com/bezkoder/spring-boot-h2-database-crud)._
 
