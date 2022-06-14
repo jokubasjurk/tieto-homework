@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.validation.Valid;
 import java.util.Map;
 import java.util.stream.Collectors;
 
@@ -20,7 +21,7 @@ public class TripController {
     ItemRetriever itemRetriever;
 
     @PostMapping("/trip")
-    public ResponseEntity<Map<String, Integer>> getTripItems(@RequestBody TripInfoDTO tripInfoDTO) {
+    public ResponseEntity<Map<String, Integer>> getTripItems(@RequestBody @Valid TripInfoDTO tripInfoDTO) {
         try {
             itemRetriever.setCalculator(getCalculatorChain());
             return new ResponseEntity<>(itemRetriever.retrieveItems(tripInfoDTO.getKilometers(), tripInfoDTO.getSeason())
